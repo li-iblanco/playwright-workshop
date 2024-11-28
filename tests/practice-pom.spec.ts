@@ -8,15 +8,15 @@ test.describe('Suit de pruebas con POM',()=>{
         const loginPage = new LoginPage(page);
         const productPage = new ProductPage(page);
 
-        test.step('Ir al sitio web',async()=>{
-            await loginPage.goTo();
+        await test.step('Ir al sitio web',async()=>{
+            await loginPage.goto();
         })
 
-        test.step('Llenar formulario de login', async()=>{
+        await test.step('Llenar formulario de login', async()=>{
             await loginPage.login('standard_user','secret_sauce');
         })
 
-        test.step('Validacion de login exitoso',async()=>{
+        await test.step('Validacion de login exitoso',async()=>{
             await expect(productPage.productTitle).toBeVisible();
             
         })
