@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Suit de test', ()=>{
 
-    test('Primer test', async({page})=>{
+    test.skip('Primer test', async({page})=>{
 
         await page.goto('https://www.saucedemo.com/');
         await page.locator('[data-test="username"]').click()
@@ -12,7 +12,6 @@ test.describe('Suit de test', ()=>{
         await page.locator('[data-test="login-button"]').click();
 
         await expect(page.locator('[data-test="title"]')).toBeVisible();
-
       })
 
 

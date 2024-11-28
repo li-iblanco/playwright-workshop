@@ -11,17 +11,17 @@ export class LoginPage{
     constructor(page:Page){
         this.page = page;
         this.usernameInput = page.locator('[data-test="username"]');
-        this.passwordInput = page.locator('[data-test="password"]')
+        this.passwordInput = page.locator('[data-test="password"]');
         this.loginButton = page.locator('[data-test="login-button"]');
 
     }
 
 
     async goTo(){
-        this.page.goto('https://www.saucedemo.com/');
+       await this.page.goto('https://www.saucedemo.com/');
     }
 
-    async login(usuario:String, password:String){
+    async login(usuario:string, password:string){
         this.usernameInput.click();
         this.usernameInput.fill(usuario);
         this.passwordInput.click();
